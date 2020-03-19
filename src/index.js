@@ -33,10 +33,19 @@ const App = () => {
     });
   };
 
+  const Total = props => {
+    let counter = 0;
+    props.parts.map(item => {
+      counter += item.exercises;
+    });
+    return `Total exercises: ${counter}`;
+  };
+
   return (
     <div>
       <Header course={course} />
       <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   );
 };
